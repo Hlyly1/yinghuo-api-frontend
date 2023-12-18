@@ -24,33 +24,33 @@ export default [
   },
   {
     path: '/welcome',
-    name: 'welcome',
+    name: '欢迎',
     icon: 'smile',
     component: './Welcome',
   },
   {
     path: '/admin',
-    name: 'admin',
+    name: '管理员',
     icon: 'crown',
     access: 'canAdmin',
     routes: [
       {
         path: '/admin',
-        redirect: '/admin/sub-page',
+        redirect: '/admin/interfaceInfo',
       },
       {
-        path: '/admin/sub-page',
-        name: 'sub-page',
-        component: './Admin',
+        path: '/admin/interfaceInfo',
+        name: '接口管理',
+        component: './interfaceInfo',
       },
     ],
   },
-  {
-    name: 'list.table-list',
-    icon: 'table',
-    path: '/list',
-    component: './TableList',
-  },
+  // {
+  //   name: '接口管理',
+  //   icon: 'table',
+  //   path: '/list',
+  //   component: './interfaceInfo',
+  // },
   {
     path: '/',
     redirect: '/welcome',

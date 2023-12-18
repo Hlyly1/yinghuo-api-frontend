@@ -101,7 +101,9 @@ export const requestConfig: RequestConfig = {
     (response) => {
       // 拦截响应数据，进行个性化处理
       const { data } = response as unknown as ResponseStructure;
-
+      if(data.code !==0){
+        throw new Error("响应失败" + data.message)
+      }
       if (data?.success === false) {
         message.error('请求失败！');
       }
